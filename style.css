@@ -1,0 +1,784 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* navbar */
+
+header {
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: #2e2e2e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+    z-index: 10;
+}
+
+.logo {
+    width: 120px;
+    margin: 0px 20px;
+}
+
+.logo img {
+    width: 140px;
+    cursor: pointer;
+}
+
+nav .logo {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 0px 2px;
+    padding: 8px 18px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00ff74;
+}
+
+header button {
+    background-color: transparent;
+    padding: 10px 40px;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 50px;
+    border: none;
+    border: 2px solid white;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.2s;
+}
+
+header button:hover {
+    color: #00ff74;
+    border: 2px solid #00ff74;
+}
+
+#home-btn {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    height: fit-content;
+    padding: 3px 8px;
+    transition: 0.3s;
+    z-index: 25;
+}
+
+.hamburger img {
+    width: 55px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width:1100px) {
+
+    header {
+        padding: 0px;
+    }
+
+    nav {
+        position: absolute;
+        left: -100vw;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #2e2e2e;
+        transition: all .9s;
+    }
+
+    nav .logo {
+        display: block;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+    }
+
+    nav ul {
+        display: block;
+        padding: 0px 20px;
+        margin-top: 30px;
+    }
+
+    nav ul li a {
+        margin-bottom: 35px;
+        padding: 10px 15px;
+    }
+
+    header button {
+        margin-left: 12px;
+        padding: 8px 30px;
+        font-size: 14px;
+    }
+
+    #home-btn {
+        display: block;
+    }
+
+    #mobile-btn {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    #nav_check:checked~nav {
+        left: 0;
+        transition: all .9s;
+    }
+
+}
+
+/* navbar */
+
+/* home */
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.banner video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.banner .content {
+    position: relative;
+    z-index: 5;
+    max-width: 100%;
+    height: 100vh;
+    margin: 0px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.banner .content img {
+    width: 250px;
+    margin: 10px 0px;
+    cursor: pointer;
+}
+
+.banner .content h1 {
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 60px;
+    font-weight: 100;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.banner .content h1 span {
+    position: relative;
+    color: #25283900;
+    letter-spacing: 5px;
+    margin: 0px 10px;
+    -webkit-text-stroke: 0.1vw #272a335d;
+}
+
+.banner .content h1 span::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #00ff74;
+    -webkit-text-stroke: 0vw #272a33;
+    overflow: hidden;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+
+    0%,
+    10%,
+    100% {
+        width: 0;
+    }
+
+    70%,
+    90% {
+        width: 100%;
+    }
+
+}
+
+.banner .content .btns {
+    margin: 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner .content .btns a {
+    background-color: #1ab05e;
+    padding: 15px 20px;
+    margin: 0px 10px;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.banner .content .btns #btnOne:hover {
+    background-color: transparent;
+    color: #00ff74;
+    border: 2px solid #00ff74;
+}
+
+.banner .content .btns #btnTwo {
+    background-color: transparent;
+    border: 2px solid white;
+}
+
+.banner .content .btns #btnTwo:hover {
+    background-color: white;
+    color: #1ab05e;
+}
+
+@media only screen and (max-width:619px) {
+    .banner .content h1 {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width:552px) {
+    .banner .content h1 span {
+        font-size: 40px;
+    }
+
+    .banner .content img {
+        width: 200px;
+    }
+
+    .banner .content .btns {
+        flex-direction: column;
+        margin: 10px 0px;
+    }
+
+    .banner .content .btns a {
+        font-size: 17px;
+        margin: 10px 0px;
+    }
+}
+
+@media only screen and (max-width:458px) {
+    .banner .content h1 span {
+        font-size: 30px;
+    }
+
+    .banner .content h1 {
+        font-size: 40px;
+    }
+
+    .banner .content img {
+        width: 190px;
+    }
+
+    .banner .content .btns {
+        flex-direction: column;
+        margin: 10px 0px;
+    }
+
+    .banner .content .btns a {
+        font-size: 17px;
+        margin: 10px 0px;
+    }
+}
+
+@media only screen and (max-width:374px) {
+    .banner .content h1 span {
+        font-size: 20px;
+    }
+
+    .banner .content h1 {
+        font-size: 30px;
+    }
+
+    .banner .content img {
+        width: 150px;
+    }
+
+    .banner .content .btns {
+        flex-direction: column;
+        margin: 10px 0px;
+    }
+
+    .banner .content .btns a {
+        font-size: 17px;
+        margin: 10px 0px;
+    }
+
+}
+
+@media only screen and (max-width:305px) {
+    .banner .content h1 span {
+        font-size: 15px;
+    }
+
+    .banner .content h1 {
+        font-size: 20px;
+    }
+
+    .banner .content img {
+        width: 150px;
+    }
+
+    .banner .content .btns {
+        flex-direction: column;
+        margin: 10px 0px;
+    }
+
+    .banner .content .btns a {
+        font-size: 10px;
+        margin: 10px 0px;
+    }
+
+}
+
+/* home */
+
+/* about */
+
+.about {
+    width: 100%;
+    height: auto;
+    padding: 25px 0px;
+    background: #2e2e2e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    width: 1290px;
+    max-width: 95%;
+    margin: 0px auto;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.about .main img {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.all-text {
+    width: 600px;
+    max-width: 100%;
+    padding: 0px 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.all-text h4 {
+    font-size: 18px;
+    color: #00ff74;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.all-text h1 {
+    font-size: 50px;
+    color: whitesmoke;
+    letter-spacing: 2px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.all-text p {
+    font-size: 16px;
+    color: whitesmoke;
+    letter-spacing: 2px;
+    line-height: 30px;
+    margin-bottom: 35px;
+}
+
+#green {
+    color: #00ff74;
+}
+
+/* about */
+
+/* buy */
+
+#buy {
+    height: 100vh;
+    background: #2e2e2e;
+}
+
+#buy .main {
+    justify-content: center;
+    text-align: center;
+}
+
+#buy .main img {
+    width: 650px;
+    border-radius: 20px;
+}
+
+#buy .all-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#buy .all-text .all-text-img {
+    width: 200px;
+    cursor: pointer;
+}
+
+#buy .all-text h1 {
+    font-size: 45px;
+    letter-spacing: 2px;
+    margin: 10px 0px;
+}
+
+#buy .all-text h3 {
+    font-size: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 100;
+}
+
+#buy .all-text .img-one {
+    width: 3710px;
+}
+
+#buy .all-text #text-btn {
+    background-color: transparent;
+    padding: 15px 20px;
+    margin: 20px 10px;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #00ff74;
+    border: 1px solid #00ff74;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#buy .all-text #text-btn:hover {
+    background-color: #00ff74;
+    color: white;
+    border: none;
+}
+
+@media only screen and (max-width:1300px) {
+
+    #buy {
+        height: auto;
+    }
+
+}
+
+@media only screen and (max-width:550px) {
+
+    #buy .main img {
+        width: 100%;
+    }
+
+    #buy .all-text h1 {
+        font-size: 25px;
+        letter-spacing: 2px;
+        margin: 10px 0px;
+    }
+
+}
+
+/* buy */
+
+/* contact */
+
+#contact {
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px 100px;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(Images/Bg-1.avif) no-repeat center;
+    background-size: cover;
+    filter: blur(50px);
+    z-index: -1;
+}
+
+.contact-box {
+    max-width: 850px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #2e2e2e;
+}
+
+.left {
+    height: 100%;
+    background: url(Images/Bg-1.avif) no-repeat center;
+    background-size: cover;
+}
+
+.right {
+    padding: 25px 40px;
+}
+
+.right h2 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    color: #00ff74;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.right h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 120px;
+    border-radius: 5px;
+    background-color: #1ab05e;
+}
+
+.field {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+    background-color: rgba(230, 230, 230, 0.6);
+    margin-bottom: 22px;
+    transition: 0.3s;
+    font-size: 1.1rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.field:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+
+.field:focus {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+}
+
+.area {
+    min-height: 150px;
+}
+
+.right .btn {
+    width: 100%;
+    background-color: transparent;
+    padding: 15px 20px;
+    margin: 20px 10px;
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #00ff74;
+    border: 1px solid #00ff74;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.right .btn:hover {
+    color: white;
+    border: 1px solid white;
+}
+
+@media only screen and (max-width:900px) {
+
+    #contact {
+        height: auto;
+    }
+
+    .contact-box {
+        grid-template-columns: 1fr;
+    }
+
+    .left {
+        height: 200px;
+    }
+
+}
+
+/* contact */
+
+/* footer */
+
+.footer {
+    width: 100%;
+    height: auto;
+    padding: 10px 4%;
+    background-color: #2e2e2e;
+}
+
+.footer-content img {
+    width: 130px;
+    margin: 30px 0px;
+    cursor: pointer;
+}
+
+.footer-content ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.footer-content li a {
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #00ff74;
+    margin: 0px 30px;
+}
+
+.footer-content li a:hover {
+    color: white;
+}
+
+.footer-content p {
+    font-size: 13px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+    margin: 10px 0px;
+}
+
+.footer-content .icons img {
+    width: 40px;
+    margin: 0px 20px;
+    cursor: pointer;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-content .icons {
+    text-align: center;
+}
+
+@media only screen and (max-width:455px) {
+
+    .footer-content li a {
+        font-size: 12px;
+        margin: 0px 10px;
+    }
+
+}
+
+footer {
+    width: 100%;
+    background-color: #2e2e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #00ff74;
+}
+
+footer p {
+    color: #00ff74;
+    padding: 12px 0px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media only screen and (max-width:1200px) {
+
+    footer p {
+        font-size: 13px;
+    }
+
+}
+
+/* footer */
